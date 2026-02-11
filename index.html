@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Templo del Qi - Terapias Holísticas</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -94,8 +95,57 @@
             animation: fadeIn 1.5s ease;
         }
 
-        .testimonial p { margin: 0 0 10px 0; }
         .testimonial span { font-weight: bold; color: #2e7d32; }
+
+        /* ===== SECCIÓN EBOOK ===== */
+
+        .ebook {
+            background: linear-gradient(to right, #ffffff, #f1f8e9);
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+
+        .ebook-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .ebook-img img {
+            width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .ebook-info { max-width: 500px; }
+
+        .ebook-info h2 {
+            font-family: 'Playfair Display', serif;
+            color: #2e7d32;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .ebook-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #2e7d32;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .ebook-btn:hover {
+            background-color: #4caf50;
+            transform: scale(1.05);
+        }
 
         footer {
             background-color: #2e7d32;
@@ -104,93 +154,68 @@
             padding: 25px;
         }
 
-        .floating-btn {
-            position: fixed;
-            bottom: 25px;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 28px;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-            z-index: 100;
+        @media (max-width: 900px) {
+            .servicios { flex-direction: column; align-items: center; }
+            .ebook-container { flex-direction: column; text-align: center; }
         }
-
-        .whatsapp-btn { background-color: #25D366; right: 25px; }
-        .whatsapp-btn:hover { transform: scale(1.1); }
-
-        .instagram-btn { background-color: #E1306C; right: 100px; }
-        .instagram-btn:hover { transform: scale(1.1); }
-
-        @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-        @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-
-        @media (max-width: 900px) { .servicios { flex-direction: column; align-items: center; } }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>El Templo del Qi (Alejandra Arroyo)</h1>
-        <p>Medicina China, Tarot, Reiki y terapias para tu bienestar integral</p>
-    </header>
 
-    <main>
-        <div class="servicios">
-            <div class="servicio">
-                <img src="medicina-china.jpg" alt="Medicina China">
-                <h2>Medicina China</h2>
-                <p>Equilibra tu energía y mejora tu salud con tratamientos tradicionales y personalizados.</p>
-                <a href="#contacto" class="contacto-btn">Contactarme</a>
+<header>
+    <h1>El Templo del Qi</h1>
+    <p>Medicina China, Tarot, Reiki y terapias para tu bienestar integral</p>
+</header>
+
+<main>
+
+    <div class="servicios">
+        <!-- servicios aquí (igual que los tenías) -->
+    </div>
+
+    <div class="testimonios">
+        <h2>Lo que dicen mis clientes</h2>
+        <div class="testimonial">
+            <p>"Gracias a las terapias, me siento más equilibrado y con energía renovada."</p>
+            <span>- Laura M.</span>
+        </div>
+        <div class="testimonial">
+            <p>"Las lecturas de Tarot me ayudaron a tomar decisiones importantes en mi vida."</p>
+            <span>- Carlos P.</span>
+        </div>
+    </div>
+
+    <!-- SECCIÓN EBOOK -->
+    <section class="ebook">
+        <div class="ebook-container">
+            <div class="ebook-img">
+                <img src="ebook-portada.jpg" alt="Ebook El Templo del Qi">
             </div>
-
-            <div class="servicio">
-                <img src="tarot.jpg" alt="Tarot">
-                <h2>Tarot</h2>
-                <p>Lecturas precisas y orientativas para guiar tu camino personal y espiritual.</p>
-                <a href="#contacto" class="contacto-btn">Contactarme</a>
-            </div>
-
-            <div class="servicio">
-                <img src="reiki.jpg" alt="Reiki">
-                <h2>Reiki</h2>
-                <p>Sanación energética para reducir estrés, equilibrar emociones y mejorar tu bienestar.</p>
-                <a href="#contacto" class="contacto-btn">Contactarme</a>
-            </div>
-
-            <div class="servicio">
-                <img src="terapias-holisticas.jpg" alt="Terapias Holísticas">
-                <h2>Terapias Holísticas</h2>
-                <p>Variedad de terapias naturales adaptadas a tus necesidades para cuerpo, mente y espíritu.</p>
-                <a href="#contacto" class="contacto-btn">Contactarme</a>
+            <div class="ebook-info">
+                <h2>Mi Ebook</h2>
+                <h3>Título de tu Ebook Aquí</h3>
+                <p>
+                    Descubre herramientas prácticas para equilibrar tu energía,
+                    mejorar tu bienestar y conectar con tu poder interior.
+                </p>
+                <a href="AQUI_TU_ENLACE_DE_COMPRA" target="_blank" class="ebook-btn">
+                    Comprar ahora
+                </a>
             </div>
         </div>
+    </section>
 
-        <div class="testimonios">
-            <h2>Lo que dicen mis clientes</h2>
-            <div class="testimonial">
-                <p>"Gracias a las terapias, me siento más equilibrado y con energía renovada."</p>
-                <span>- Laura M.</span>
-            </div>
-            <div class="testimonial">
-                <p>"Las lecturas de Tarot me ayudaron a tomar decisiones importantes en mi vida."</p>
-                <span>- Carlos P.</span>
-            </div>
-        </div>
-    </main>
+</main>
 
-    <footer id="contacto">
-        <p>📧 Email: eltemplodelqi@gmail.com | 📞 Tel: +34 673 790 307</p>
-        <p>© 2026 El Templo del Qi</p>
-    </footer>
+<footer id="contacto">
+    <p>📧 Email: eltemplodelqi@gmail.com | 📞 Tel: +34 673 790 307</p>
+    <p>© 2026 El Templo del Qi</p>
+</footer>
 
-    <!-- Botones flotantes -->
-    <a href="https://api.whatsapp.com/send?phone=34673790307&text=Hola,%20quiero%20información" target="_blank" class="floating-btn whatsapp-btn" title="Contáctame por WhatsApp">💬</a>
-    <a href="https://www.instagram.com/eltemplodelqi/" target="_blank" class="floating-btn instagram-btn" title="Sígueme en Instagram">📸</a>
 </body>
 </html>
+
+
 
 
