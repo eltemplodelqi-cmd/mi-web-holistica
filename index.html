@@ -352,7 +352,7 @@
 
     <section class="sobre" id="sobre">
         <div class="sobre-grid">
-            <img id="fotoConsulta" alt="Espacio de El Templo del Qi en Santanyí">
+            <img id="fotoConsulta" src="consulta-el-templo-alta-calidad.jpg%20nitida.jpg" alt="Espacio de El Templo del Qi en Santanyí" loading="lazy">
             <div>
                 <div data-lang="es"><h2>Sobre El Templo del Qi</h2>
                 <p>El Templo del Qi es un espacio de bienestar en Santanyí creado para ofrecer un ambiente tranquilo, acogedor y cercano. Aquí encontrarás Medicina Tradicional China, acupuntura, Reiki, terapia energética, masajes y Tarot, con sesiones adaptadas a cada persona.</p>
@@ -468,7 +468,7 @@ if(localStorage.getItem("qi-lang")==="en")document.body.classList.add("lang-en")
     });
 })();
 
-fetch("consulta-el-templo.b64").then(r=>r.text()).then(b=>{const src="data:image/jpeg;base64,"+b.trim();const i=document.getElementById("fotoConsulta");if(i){i.src=src;i.removeAttribute("width");i.removeAttribute("height");}const h=document.querySelector("header");if(h){h.style.backgroundImage='linear-gradient(rgba(20,45,25,.38),rgba(20,45,25,.38)), url("'+src+'")';h.style.backgroundSize="cover";h.style.backgroundPosition="center";h.style.minHeight="520px";h.style.display="flex";h.style.flexDirection="column";h.style.justifyContent="center";}});
+const fotoConsulta="consulta-el-templo-alta-calidad.jpg%20nitida.jpg";const i=document.getElementById("fotoConsulta");if(i)i.src=fotoConsulta;const h=document.querySelector("header");if(h){h.style.backgroundImage='linear-gradient(rgba(20,45,25,.38),rgba(20,45,25,.38)), url("'+fotoConsulta+'")';h.style.backgroundSize="cover";h.style.backgroundPosition="center";h.style.minHeight="520px";h.style.display="flex";h.style.flexDirection="column";h.style.justifyContent="center";}
 </script>
 
 </body>
