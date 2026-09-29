@@ -296,6 +296,29 @@
         </form>
     </section>
 
+
+    <!-- APPOINTMENT REQUEST - ENGLISH -->
+    <section class="citas" id="appointments">
+        <h2>Book an appointment</h2>
+        <p class="intro">Choose your therapy, session type and preferred time. Appointments are available Monday to Friday, 09:00–19:00. Your request will be sent by WhatsApp and remains pending until El Templo del Qi confirms it.</p>
+        <form id="appointmentForm">
+            <div class="cita-grid">
+                <div class="cita-campo full"><label for="nameEn">Full name</label><input id="nameEn" required autocomplete="name"></div>
+                <div class="cita-campo"><label for="phoneEn">Phone / WhatsApp</label><input id="phoneEn" type="tel" required autocomplete="tel"></div>
+                <div class="cita-campo"><label for="therapyEn">Therapy</label>
+                    <select id="therapyEn" required><option value="">Choose a therapy</option><option>Chinese medicine</option><option>Acupuncture</option><option>Reiki</option><option>Energy therapy</option><option>Massage</option><option>Tarot</option></select>
+                </div>
+                <div class="cita-campo"><label for="durationEn">Duration</label><select id="durationEn" required disabled><option value="">Choose therapy first</option></select></div>
+                <div class="cita-campo"><label for="modeEn">Session type</label><select id="modeEn" required disabled><option value="">Choose therapy first</option></select></div>
+                <div class="cita-campo"><label for="dateEn">Preferred date</label><input id="dateEn" type="date" required></div>
+                <div class="cita-campo"><label for="timeEn">Preferred time</label><input id="timeEn" type="time" min="09:00" max="19:00" step="1200" required></div>
+                <div class="cita-campo full"><label for="notesEn">Notes (optional)</label><textarea id="notesEn" placeholder="Anything you would like us to know."></textarea></div>
+            </div>
+            <div class="cita-nota"><strong>Important:</strong> sending this request does not confirm your appointment. We will reply by WhatsApp to confirm it. In-person appointments take place at Carrer de Felanitx, 32, 07650 Santanyí, Mallorca.</div>
+            <button class="cita-submit" type="submit">Request appointment via WhatsApp</button>
+        </form>
+    </section>
+
     <!-- TESTIMONIOS -->
     <div class="testimonios">
         <h2>Lo que dicen mis clientes</h2>
@@ -377,6 +400,31 @@
         window.open("https://wa.me/34673790307?text="+encodeURIComponent(mensaje), "_blank");
     });
 })();
+
+(function () {
+    const options = {
+        "Chinese medicine": { durations:["60 min"], modes:["In person","Online"] },
+        "Acupuncture": { durations:["40 min"], modes:["In person"] },
+        "Reiki": { durations:["60 min"], modes:["In person","Online"] },
+        "Energy therapy": { durations:["60 min"], modes:["In person","Online"] },
+        "Massage": { durations:["30 min","60 min"], modes:["In person"] },
+        "Tarot": { durations:["30 min","60 min","90 min"], modes:["In person","Online"] }
+    };
+    const therapy=document.getElementById("therapyEn"), duration=document.getElementById("durationEn"), mode=document.getElementById("modeEn"), date=document.getElementById("dateEn");
+    const today=new Date(); today.setMinutes(today.getMinutes()-today.getTimezoneOffset()); date.min=today.toISOString().split("T")[0];
+    function load(select,items,label){select.innerHTML='<option value="">'+label+'</option>'+items.map(x=>'<option>'+x+'</option>').join("");select.disabled=false;}
+    therapy.addEventListener("change",function(){const o=options[this.value];if(!o){duration.disabled=mode.disabled=true;return;}load(duration,o.durations,"Choose duration");load(mode,o.modes,"Choose session type");});
+    document.getElementById("appointmentForm").addEventListener("submit",function(e){
+        e.preventDefault();
+        const d=new Date(date.value+"T12:00:00");
+        if(d.getDay()===0||d.getDay()===6){alert("Appointments are available Monday to Friday. Please choose another date.");return;}
+        const time=document.getElementById("timeEn").value;
+        if(time<"09:00"||time>"19:00"){alert("Opening hours are 09:00 to 19:00.");return;}
+        const message=["Hello, I would like to request an appointment at El Templo del Qi.","","Name: "+document.getElementById("nameEn").value,"Phone: "+document.getElementById("phoneEn").value,"Therapy: "+therapy.value,"Duration: "+duration.value,"Session type: "+mode.value,"Preferred date: "+date.value,"Preferred time: "+time,"Notes: "+(document.getElementById("notesEn").value||"None"),"","I understand that my appointment is pending confirmation."].join("\n");
+        window.open("https://wa.me/34673790307?text="+encodeURIComponent(message),"_blank");
+    });
+})();
+
 </script>
 
 </body>
