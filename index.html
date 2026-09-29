@@ -99,6 +99,12 @@
 
         .contacto-btn:hover { background-color: #4caf50; }
 
+        .sobre { background:#fff; border-radius:20px; padding:28px; margin:0 auto 50px; box-shadow:0 6px 18px rgba(0,0,0,.10); }
+        .sobre-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:28px; align-items:center; }
+        .sobre img { width:100%; border-radius:16px; display:block; min-height:260px; object-fit:cover; }
+        .sobre h2 { font-family:'Playfair Display',serif; color:#2e7d32; font-size:2em; margin-top:0; }
+        .sobre p { line-height:1.65; }
+        .sobre .en { border-top:1px solid #d9e5d9; margin-top:18px; padding-top:18px; }
         .testimonios {
             text-align: center;
             margin-bottom: 50px;
@@ -231,6 +237,7 @@
         @media (max-width: 900px) {
             .servicios { flex-direction: column; align-items: center; }
             .ebook-container { flex-direction: column; text-align: center; }
+            .sobre-grid { grid-template-columns:1fr; }
             .cita-grid { grid-template-columns:1fr; }
             .cita-campo.full { grid-column:auto; }
         }
@@ -339,6 +346,19 @@
         </form>
     </section>
 
+    <section class="sobre" id="sobre">
+        <div class="sobre-grid">
+            <img id="fotoConsulta" alt="Espacio de El Templo del Qi en Santanyí">
+            <div>
+                <h2>Sobre El Templo del Qi</h2>
+                <p>El Templo del Qi es un espacio de bienestar en Santanyí creado para ofrecer un ambiente tranquilo, acogedor y cercano. Aquí encontrarás Medicina Tradicional China, acupuntura, Reiki, terapia energética, masajes y Tarot, con sesiones adaptadas a cada persona.</p>
+                <p>📍 Carrer de Felanitx, 32 · Santanyí, Mallorca<br>🌿 Presencial y online según la terapia.</p>
+                <div class="en"><h2>About El Templo del Qi</h2><p>El Templo del Qi is a wellness space in Santanyí designed to offer a calm, welcoming and personal environment. We offer Chinese Medicine, acupuncture, Reiki, energy therapy, massage and Tarot, with sessions tailored to each person.</p><p>📍 Carrer de Felanitx, 32 · Santanyí, Mallorca<br>🌿 In-person and online sessions depending on the therapy.</p></div>
+                <a href="#citas" class="contacto-btn">Reservar cita</a> <a href="#appointments" class="contacto-btn">Book an appointment</a>
+            </div>
+        </div>
+    </section>
+
     <!-- TESTIMONIOS -->
     <div class="testimonios">
         <h2>Lo que dicen mis clientes</h2>
@@ -442,6 +462,7 @@
     });
 })();
 
+fetch("consulta-el-templo.b64").then(r=>r.text()).then(b=>{const i=document.getElementById("fotoConsulta"); if(i) i.src="data:image/jpeg;base64,"+b.trim();});
 </script>
 
 </body>
