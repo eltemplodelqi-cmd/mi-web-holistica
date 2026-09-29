@@ -468,7 +468,7 @@ if(localStorage.getItem("qi-lang")==="en")document.body.classList.add("lang-en")
     });
 })();
 
-fetch("consulta-el-templo.b64").then(r=>r.text()).then(b=>{const i=document.getElementById("fotoConsulta"); if(i) i.src="data:image/jpeg;base64,"+b.trim();});
+fetch("consulta-el-templo.b64").then(r=>r.text()).then(b=>{const src="data:image/jpeg;base64,"+b.trim(); const i=document.getElementById("fotoConsulta"); if(i) i.src=src; const h=document.querySelector("header"); if(h){h.style.backgroundImage='linear-gradient(rgba(20,45,25,.38),rgba(20,45,25,.38)), url("'+src+'")';h.style.backgroundSize="cover";h.style.backgroundPosition="center";h.style.minHeight="520px";h.style.display="flex";h.style.flexDirection="column";h.style.justifyContent="center";}});
 </script>
 
 </body>
