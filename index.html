@@ -176,6 +176,21 @@
             transform: scale(1.05);
         }
 
+
+        /* ===== SOLICITUD DE CITA ===== */
+        .citas { background: rgba(255,255,255,.96); padding: 38px 24px; border-radius: 20px; margin: 0 auto 55px; max-width: 760px; box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+        .citas h2 { font-family: 'Playfair Display', serif; color: #2e7d32; text-align:center; font-size:2em; margin-top:0; }
+        .citas .intro { text-align:center; line-height:1.55; }
+        .cita-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:25px; }
+        .cita-campo { display:flex; flex-direction:column; gap:6px; }
+        .cita-campo.full { grid-column:1 / -1; }
+        .cita-campo label { font-weight:bold; color:#2e7d32; }
+        .cita-campo input, .cita-campo select, .cita-campo textarea { box-sizing:border-box; width:100%; padding:12px; border:1px solid #b7c9b8; border-radius:8px; font:inherit; background:#fff; }
+        .cita-campo textarea { min-height:90px; resize:vertical; }
+        .cita-nota { background:#f1f8e9; border-left:4px solid #2e7d32; padding:12px 14px; margin:18px 0; line-height:1.45; }
+        .cita-submit { width:100%; border:0; cursor:pointer; background:#25D366; color:white; padding:14px 20px; border-radius:9px; font-size:1.05em; font-weight:bold; }
+        .cita-submit:hover { filter:brightness(.95); }
+
         footer {
             background-color: #2e7d32;
             color: white;
@@ -208,6 +223,8 @@
         @media (max-width: 900px) {
             .servicios { flex-direction: column; align-items: center; }
             .ebook-container { flex-direction: column; text-align: center; }
+            .cita-grid { grid-template-columns:1fr; }
+            .cita-campo.full { grid-column:auto; }
         }
     </style>
 </head>
@@ -227,30 +244,57 @@
             <img src="medicina-china.jpg" alt="Medicina China">
             <h2>Medicina China</h2>
             <p>Equilibra tu energía y mejora tu salud con tratamientos tradicionales y personalizados.</p>
-            <a href="#contacto" class="contacto-btn">Contactarme</a>
+            <a href="#citas" class="contacto-btn">Solicitar cita</a>
         </div>
 
         <div class="servicio">
             <img src="tarot.jpg" alt="Tarot">
             <h2>Tarot</h2>
             <p>Lecturas precisas y orientativas para guiar tu camino personal y espiritual.</p>
-            <a href="#contacto" class="contacto-btn">Contactarme</a>
+            <a href="#citas" class="contacto-btn">Solicitar cita</a>
         </div>
 
         <div class="servicio">
             <img src="reiki.jpg" alt="Reiki">
             <h2>Reiki</h2>
             <p>Sanación energética para reducir estrés, equilibrar emociones y mejorar tu bienestar.</p>
-            <a href="#contacto" class="contacto-btn">Contactarme</a>
+            <a href="#citas" class="contacto-btn">Solicitar cita</a>
         </div>
 
         <div class="servicio">
             <img src="terapias-holisticas.jpg" alt="Terapias Holísticas">
             <h2>Terapias Holísticas</h2>
             <p>Variedad de terapias naturales adaptadas a tus necesidades para cuerpo, mente y espíritu.</p>
-            <a href="#contacto" class="contacto-btn">Contactarme</a>
+            <a href="#citas" class="contacto-btn">Solicitar cita</a>
         </div>
     </div>
+
+
+    <!-- SOLICITUD DE CITA -->
+    <section class="citas" id="citas">
+        <h2>Solicitar cita</h2>
+        <p class="intro">Elige tu terapia, modalidad y horario preferido. Atendemos de lunes a viernes de 09:00 a 19:00. La solicitud se enviará por WhatsApp y la cita quedará pendiente hasta que El Templo del Qi la confirme.</p>
+        <form id="citaForm">
+            <div class="cita-grid">
+                <div class="cita-campo full"><label for="nombre">Nombre y apellidos</label><input id="nombre" required autocomplete="name"></div>
+                <div class="cita-campo"><label for="telefono">Teléfono</label><input id="telefono" type="tel" required autocomplete="tel"></div>
+                <div class="cita-campo"><label for="terapia">Terapia</label>
+                    <select id="terapia" required>
+                        <option value="">Selecciona una terapia</option>
+                        <option>Medicina china</option><option>Acupuntura</option><option>Reiki</option>
+                        <option>Terapia energética</option><option>Masaje</option><option>Tarot</option>
+                    </select>
+                </div>
+                <div class="cita-campo"><label for="duracion">Duración</label><select id="duracion" required disabled><option value="">Selecciona primero la terapia</option></select></div>
+                <div class="cita-campo"><label for="modalidad">Modalidad</label><select id="modalidad" required disabled><option value="">Selecciona primero la terapia</option></select></div>
+                <div class="cita-campo"><label for="fecha">Fecha preferida</label><input id="fecha" type="date" required></div>
+                <div class="cita-campo"><label for="hora">Hora preferida</label><input id="hora" type="time" min="09:00" max="19:00" step="1200" required></div>
+                <div class="cita-campo full"><label for="observaciones">Observaciones (opcional)</label><textarea id="observaciones" placeholder="Cuéntanos brevemente cualquier detalle que debamos tener en cuenta."></textarea></div>
+            </div>
+            <div class="cita-nota"><strong>Importante:</strong> enviar esta solicitud no confirma la cita. Te responderemos por WhatsApp para confirmarla. Las citas presenciales se realizan en Carrer de Felanitx, 32, 07650 Santanyí.</div>
+            <button class="cita-submit" type="submit">Solicitar cita por WhatsApp</button>
+        </form>
+    </section>
 
     <!-- TESTIMONIOS -->
     <div class="testimonios">
@@ -294,6 +338,46 @@
 
 <a href="https://api.whatsapp.com/send?phone=34673790307&text=Hola,%20quiero%20información" target="_blank" class="floating-btn whatsapp-btn">💬</a>
 <a href="https://www.instagram.com/eltemplodelqi/" target="_blank" class="floating-btn instagram-btn">📸</a>
+
+
+<script>
+(function () {
+    const opciones = {
+        "Medicina china": { duraciones:["60 min"], modalidades:["Presencial","Online"] },
+        "Acupuntura": { duraciones:["40 min"], modalidades:["Presencial"] },
+        "Reiki": { duraciones:["60 min"], modalidades:["Presencial","Online"] },
+        "Terapia energética": { duraciones:["60 min"], modalidades:["Presencial","Online"] },
+        "Masaje": { duraciones:["30 min","60 min"], modalidades:["Presencial"] },
+        "Tarot": { duraciones:["30 min","60 min","90 min"], modalidades:["Presencial","Online"] }
+    };
+    const terapia=document.getElementById("terapia"), duracion=document.getElementById("duracion"), modalidad=document.getElementById("modalidad"), fecha=document.getElementById("fecha");
+    const hoy=new Date(); hoy.setMinutes(hoy.getMinutes()-hoy.getTimezoneOffset()); fecha.min=hoy.toISOString().split("T")[0];
+    function cargar(select, items, texto) { select.innerHTML='<option value="">'+texto+'</option>'+items.map(x=>'<option>'+x+'</option>').join(""); select.disabled=false; }
+    terapia.addEventListener("change", function(){ const o=opciones[this.value]; if(!o){duracion.disabled=modalidad.disabled=true; return;} cargar(duracion,o.duraciones,"Selecciona duración"); cargar(modalidad,o.modalidades,"Selecciona modalidad"); });
+    document.getElementById("citaForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        const d=new Date(fecha.value+"T12:00:00");
+        if (d.getDay()===0 || d.getDay()===6) { alert("Las citas se atienden de lunes a viernes. Elige otra fecha."); return; }
+        const h=document.getElementById("hora").value;
+        if(h<"09:00" || h>"19:00") { alert("El horario de atención es de 09:00 a 19:00."); return; }
+        const mensaje=[
+            "Hola, quiero solicitar una cita en El Templo del Qi.",
+            "",
+            "Nombre: "+document.getElementById("nombre").value,
+            "Teléfono: "+document.getElementById("telefono").value,
+            "Terapia: "+terapia.value,
+            "Duración: "+duracion.value,
+            "Modalidad: "+modalidad.value,
+            "Fecha preferida: "+fecha.value,
+            "Hora preferida: "+h,
+            "Observaciones: "+(document.getElementById("observaciones").value || "Ninguna"),
+            "",
+            "Entiendo que la cita queda pendiente de confirmación."
+        ].join("\n");
+        window.open("https://wa.me/34673790307?text="+encodeURIComponent(mensaje), "_blank");
+    });
+})();
+</script>
 
 </body>
 </html>
