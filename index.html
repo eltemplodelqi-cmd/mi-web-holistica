@@ -34,6 +34,14 @@
         }
 
         header p { font-size: 1.2em; margin-top: 10px; }
+        .hero-actions { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:24px; }
+        .hero-btn { display:inline-block; padding:12px 22px; border-radius:999px; background:#2e7d32; color:#fff; font-weight:bold; text-shadow:none; box-shadow:0 4px 12px rgba(0,0,0,.22); }
+        .hero-btn.alt { background:#fff; color:#2e7d32; }
+        .promo { max-width:900px; margin:-8px auto 32px; background:#fff8e1; border:2px solid #d4a72c; border-radius:16px; padding:18px 20px; text-align:center; box-shadow:0 5px 16px rgba(0,0,0,.1); }
+        .promo strong { color:#2e7d32; font-size:1.25em; }
+        .section-title { text-align:center; font-family:'Playfair Display',serif; color:#2e7d32; font-size:2.1em; margin:12px 0 25px; }
+        .langbar { text-align:center; padding:10px; background:#f1f8e9; font-weight:bold; position:sticky; top:0; z-index:50; box-shadow:0 2px 8px rgba(0,0,0,.08); }
+        .langbar a { margin:0 8px; color:#2e7d32; }
 
         main { padding: 30px 20px; max-width: 1200px; margin: 0 auto; }
 
@@ -231,12 +239,16 @@
 
 <body>
 
+<div class="langbar">🌿 El Templo del Qi &nbsp; <a href="#citas">🇪🇸 ES</a> | <a href="#appointments">🇬🇧 EN</a></div>
 <header>
     <h1>El Templo del Qi</h1>
-    <p>Medicina China, Tarot, Reiki y terapias para tu bienestar integral</p>
+    <p>Medicina China y terapias para cuerpo, mente y espíritu · Santanyí, Mallorca</p>
+    <div class="hero-actions"><a class="hero-btn" href="#citas">Reservar cita</a><a class="hero-btn alt" href="#appointments">Book an appointment</a></div>
 </header>
 
 <main>
+    <section class="promo"><strong>✨ 20% DE DESCUENTO EN TU PRIMERA SESIÓN · 20% OFF YOUR FIRST SESSION ✨</strong><br>Oferta de regreso válida hasta el 31/10/2026 · Welcome back offer valid until 31/10/2026<br><a class="contacto-btn" href="#citas">Quiero mi cita</a> <a class="contacto-btn" href="#appointments">Book now</a></section>
+    <h2 class="section-title">Terapias · Therapies</h2>
 
     <!-- SERVICIOS -->
     <div class="servicios">
@@ -262,10 +274,16 @@
         </div>
 
         <div class="servicio">
-            <img src="terapias-holisticas.jpg" alt="Terapias Holísticas">
-            <h2>Terapias Holísticas</h2>
-            <p>Variedad de terapias naturales adaptadas a tus necesidades para cuerpo, mente y espíritu.</p>
-            <a href="#citas" class="contacto-btn">Solicitar cita</a>
+            <img src="terapias-holisticas.jpg" alt="Acupuntura">
+            <h2>Acupuntura</h2><p>Sesiones presenciales orientadas al equilibrio y bienestar dentro de la Medicina Tradicional China.</p><a href="#citas" class="contacto-btn">Solicitar cita</a>
+        </div>
+        <div class="servicio">
+            <img src="terapias-holisticas.jpg" alt="Terapia energética">
+            <h2>Terapia energética</h2><p>Sesiones presenciales u online para favorecer relajación, equilibrio y bienestar personal.</p><a href="#citas" class="contacto-btn">Solicitar cita</a>
+        </div>
+        <div class="servicio">
+            <img src="terapias-holisticas.jpg" alt="Masajes">
+            <h2>Masajes</h2><p>Sesiones presenciales de 30 o 60 minutos para relajarte y dedicarte un momento de bienestar.</p><a href="#citas" class="contacto-btn">Solicitar cita</a>
         </div>
     </div>
 
@@ -335,9 +353,6 @@
     <!-- SECCIÓN EBOOK -->
     <section class="ebook">
         <div class="ebook-container">
-            <div class="ebook-img">
-                <img src="25f46d15-552c-4c08-bb3a-57cb18646b3b.jpg" alt="Ebook El Templo del Qi">
-            </div>
             <div class="ebook-info">
                 <h2>Mi Ebook</h2>
                 <h3>Autosanación con Medicina Tradicional China</h3>
