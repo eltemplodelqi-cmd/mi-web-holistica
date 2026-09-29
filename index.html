@@ -114,7 +114,7 @@
 
         .sobre { background:#fff; border-radius:20px; padding:28px; margin:0 auto 50px; box-shadow:0 6px 18px rgba(0,0,0,.10); }
         .sobre-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:28px; align-items:center; }
-        .sobre img { width:100%; height:auto; aspect-ratio:16/10; border-radius:16px; display:block; object-fit:cover; object-position:center; image-rendering:auto; }
+        .sobre img { width:100%; height:auto; aspect-ratio:auto; border-radius:16px; display:block; object-fit:contain; object-position:center; image-rendering:auto; }
         .sobre h2 { font-family:'Playfair Display',serif; color:#2e7d32; font-size:2em; margin-top:0; }
         .sobre p { line-height:1.65; }
         .sobre .en { border-top:1px solid #d9e5d9; margin-top:18px; padding-top:18px; }
@@ -390,7 +390,7 @@
 
     <section class="sobre" id="sobre">
         <div class="sobre-grid">
-            <img id="fotoConsulta" src="consulta-el-templo-alta-calidad.jpg%20nitida.jpg" alt="Espacio de El Templo del Qi en Santanyí" loading="lazy">
+            <img id="fotoConsulta" src="consulta-el-templo-alta-calidad.jpg%20nitida.jpg?v=2" alt="Espacio de El Templo del Qi en Santanyí" loading="lazy">
             <div>
                 <div data-lang="es"><h2>Sobre El Templo del Qi</h2>
                 <p>El Templo del Qi es un espacio de bienestar en Santanyí creado para ofrecer un ambiente tranquilo, acogedor y cercano. Aquí encontrarás Medicina Tradicional China, acupuntura, Reiki, terapia energética, masajes y Tarot, con sesiones adaptadas a cada persona.</p>
@@ -506,7 +506,7 @@ if(localStorage.getItem("qi-lang")==="en")document.body.classList.add("lang-en")
     });
 })();
 
-const fotoConsulta="consulta-el-templo-alta-calidad.jpg%20nitida.jpg";const i=document.getElementById("fotoConsulta");if(i)i.src=fotoConsulta;const h=document.querySelector("header");if(h){h.style.backgroundImage='linear-gradient(rgba(20,45,25,.38),rgba(20,45,25,.38)), url("'+fotoConsulta+'")';h.style.backgroundSize="cover";h.style.backgroundPosition="center";h.style.minHeight="520px";h.style.display="flex";h.style.flexDirection="column";h.style.justifyContent="center";}
+const fotoConsulta="consulta-el-templo-alta-calidad.jpg%20nitida.jpg?v=2";const i=document.getElementById("fotoConsulta");if(i)i.src=fotoConsulta;const h=document.querySelector("header");if(h){h.style.backgroundImage='linear-gradient(rgba(20,45,25,.38),rgba(20,45,25,.38)), url("'+fotoConsulta+'")';h.style.backgroundSize="cover";h.style.backgroundPosition="center";h.style.minHeight="520px";h.style.display="flex";h.style.flexDirection="column";h.style.justifyContent="center";}
 </script>
 
 </body>
