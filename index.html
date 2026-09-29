@@ -41,7 +41,11 @@
         .promo strong { color:#2e7d32; font-size:1.25em; }
         .section-title { text-align:center; font-family:'Playfair Display',serif; color:#2e7d32; font-size:2.1em; margin:12px 0 25px; }
         .langbar { text-align:center; padding:10px; background:#f1f8e9; font-weight:bold; position:sticky; top:0; z-index:50; box-shadow:0 2px 8px rgba(0,0,0,.08); }
-        .langbar a { margin:0 8px; color:#2e7d32; }
+        .langbar a { margin:0 8px; color:#2e7d32; cursor:pointer; }
+        [data-lang="en"] { display:none; }
+        body.lang-en [data-lang="es"] { display:none !important; }
+        body.lang-en [data-lang="en"] { display:initial; }
+        body.lang-en section[data-lang="en"], body.lang-en div[data-lang="en"] { display:block; }
 
         main { padding: 30px 20px; max-width: 1200px; margin: 0 auto; }
 
@@ -246,16 +250,16 @@
 
 <body>
 
-<div class="langbar">🌿 El Templo del Qi &nbsp; <a href="#citas">🇪🇸 ES</a> | <a href="#appointments">🇬🇧 EN</a></div>
+<div class="langbar">🌿 El Templo del Qi &nbsp; <a onclick="setLanguage('es')">🇪🇸 ES</a> | <a onclick="setLanguage('en')">🇬🇧 EN</a></div>
 <header>
     <h1>El Templo del Qi</h1>
-    <p>Medicina China y terapias para cuerpo, mente y espíritu · Santanyí, Mallorca</p>
-    <div class="hero-actions"><a class="hero-btn" href="#citas">Reservar cita</a><a class="hero-btn alt" href="#appointments">Book an appointment</a></div>
+    <p data-lang="es">Medicina China y terapias para cuerpo, mente y espíritu · Santanyí, Mallorca</p><p data-lang="en">Chinese Medicine and therapies for body, mind and spirit · Santanyí, Mallorca</p>
+    <div class="hero-actions"><a data-lang="es" class="hero-btn" href="#citas">Reservar cita</a><a data-lang="en" class="hero-btn" href="#appointments">Book an appointment</a></div>
 </header>
 
 <main>
-    <section class="promo"><strong>✨ 20% DE DESCUENTO EN TU PRIMERA SESIÓN · 20% OFF YOUR FIRST SESSION ✨</strong><br>Oferta de regreso válida hasta el 31/10/2026 · Welcome back offer valid until 31/10/2026<br><a class="contacto-btn" href="#citas">Quiero mi cita</a> <a class="contacto-btn" href="#appointments">Book now</a></section>
-    <h2 class="section-title">Terapias · Therapies</h2>
+    <section class="promo"><div data-lang="es"><strong>✨ 20% DE DESCUENTO EN TU PRIMERA SESIÓN ✨</strong><br>Oferta de regreso válida hasta el 31/10/2026<br><a class="contacto-btn" href="#citas">Quiero mi cita</a></div><div data-lang="en"><strong>✨ 20% OFF YOUR FIRST SESSION ✨</strong><br>Welcome back offer valid until 31/10/2026<br><a class="contacto-btn" href="#appointments">Book now</a></div></section>
+    <h2 class="section-title"><span data-lang="es">Terapias</span><span data-lang="en">Therapies</span></h2>
 
     <!-- SERVICIOS -->
     <div class="servicios">
@@ -263,42 +267,42 @@
             <img src="medicina-china.jpg" alt="Medicina China">
             <h2>Medicina China</h2>
             <p>Equilibra tu energía y mejora tu salud con tratamientos tradicionales y personalizados.</p>
-            <a href="#citas" class="contacto-btn">Solicitar cita</a>
+            <a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
 
         <div class="servicio">
             <img src="tarot.jpg" alt="Tarot">
             <h2>Tarot</h2>
             <p>Lecturas precisas y orientativas para guiar tu camino personal y espiritual.</p>
-            <a href="#citas" class="contacto-btn">Solicitar cita</a>
+            <a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
 
         <div class="servicio">
             <img src="reiki.jpg" alt="Reiki">
             <h2>Reiki</h2>
             <p>Sanación energética para reducir estrés, equilibrar emociones y mejorar tu bienestar.</p>
-            <a href="#citas" class="contacto-btn">Solicitar cita</a>
+            <a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
 
         <div class="servicio">
             <img src="terapias-holisticas.jpg" alt="Acupuntura">
-            <h2>Acupuntura</h2><p>Sesiones presenciales orientadas al equilibrio y bienestar dentro de la Medicina Tradicional China.</p><p><strong>40 min · 30 €</strong> · Presencial</p><a href="#citas" class="contacto-btn">Solicitar cita</a>
+            <h2><span data-lang="es">Acupuntura</span><span data-lang="en">Acupuncture</span></h2><p data-lang="es">Sesiones presenciales orientadas al equilibrio y bienestar dentro de la Medicina Tradicional China.</p><p data-lang="en">In-person acupuncture sessions focused on balance and wellbeing within Traditional Chinese Medicine.</p><p><strong>40 min · 30 €</strong> · <span data-lang="es">Presencial</span><span data-lang="en">In person</span></p><a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
         <div class="servicio">
             <img src="terapias-holisticas.jpg" alt="Terapia energética">
-            <h2>Terapia energética</h2><p>Sesiones presenciales u online para favorecer relajación, equilibrio y bienestar personal.</p><p><strong>60 min · 60 €</strong> · Presencial / Online</p><a href="#citas" class="contacto-btn">Solicitar cita</a>
+            <h2><span data-lang="es">Terapia energética</span><span data-lang="en">Energy Therapy</span></h2><p data-lang="es">Sesiones presenciales u online para favorecer relajación, equilibrio y bienestar personal.</p><p data-lang="en">In-person or online sessions designed to support relaxation, balance and personal wellbeing.</p><p><strong>60 min · 60 €</strong> · <span data-lang="es">Presencial / Online</span><span data-lang="en">In person / Online</span></p><a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
         <div class="servicio">
             <img src="terapias-holisticas.jpg" alt="Masajes">
-            <h2>Masajes</h2><p>Sesiones presenciales de 30 o 60 minutos para relajarte y dedicarte un momento de bienestar.</p><p><strong>30 min · 40 € | 60 min · 70 €</strong> · Presencial</p><a href="#citas" class="contacto-btn">Solicitar cita</a>
+            <h2><span data-lang="es">Masajes</span><span data-lang="en">Massage</span></h2><p data-lang="es">Sesiones presenciales de 30 o 60 minutos para relajarte y dedicarte un momento de bienestar.</p><p data-lang="en">30 or 60-minute in-person massage sessions for relaxation and wellbeing.</p><p><strong>30 min · 40 € | 60 min · 70 €</strong> · <span data-lang="es">Presencial</span><span data-lang="en">In person</span></p><a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
     </div>
 
 
-    <div class="promo"><strong>🎁 Primera sesión: 20% de descuento</strong><br>Promoción válida hasta el 31/10/2026 · First session: 20% off · Valid until 31/10/2026</div>
+    <div class="promo"><div data-lang="es"><strong>🎁 Primera sesión: 20% de descuento</strong><br>Promoción válida hasta el 31/10/2026</div><div data-lang="en"><strong>🎁 First session: 20% off</strong><br>Valid until 31/10/2026</div></div>
 
     <!-- SOLICITUD DE CITA -->
-    <section class="citas" id="citas">
+    <section class="citas" id="citas" data-lang="es">
         <h2>Solicitar cita</h2>
         <p class="intro">Elige tu terapia, modalidad y horario preferido. Atendemos de lunes a viernes de 09:00 a 19:00. La solicitud se enviará por WhatsApp y la cita quedará pendiente hasta que El Templo del Qi la confirme.</p>
         <form id="citaForm">
@@ -325,7 +329,7 @@
 
 
     <!-- APPOINTMENT REQUEST - ENGLISH -->
-    <section class="citas" id="appointments">
+    <section class="citas" id="appointments" data-lang="en">
         <h2>Book an appointment</h2>
         <p class="intro">Choose your therapy, session type and preferred time. Appointments are available Monday to Friday, 09:00–19:00. Your request will be sent by WhatsApp and remains pending until El Templo del Qi confirms it.</p>
         <form id="appointmentForm">
@@ -350,18 +354,18 @@
         <div class="sobre-grid">
             <img id="fotoConsulta" alt="Espacio de El Templo del Qi en Santanyí">
             <div>
-                <h2>Sobre El Templo del Qi</h2>
+                <div data-lang="es"><h2>Sobre El Templo del Qi</h2>
                 <p>El Templo del Qi es un espacio de bienestar en Santanyí creado para ofrecer un ambiente tranquilo, acogedor y cercano. Aquí encontrarás Medicina Tradicional China, acupuntura, Reiki, terapia energética, masajes y Tarot, con sesiones adaptadas a cada persona.</p>
                 <p>📍 Carrer de Felanitx, 32 · Santanyí, Mallorca<br>🌿 Presencial y online según la terapia.</p>
-                <div class="en"><h2>About El Templo del Qi</h2><p>El Templo del Qi is a wellness space in Santanyí designed to offer a calm, welcoming and personal environment. We offer Chinese Medicine, acupuncture, Reiki, energy therapy, massage and Tarot, with sessions tailored to each person.</p><p>📍 Carrer de Felanitx, 32 · Santanyí, Mallorca<br>🌿 In-person and online sessions depending on the therapy.</p></div>
-                <a href="#citas" class="contacto-btn">Reservar cita</a> <a href="#appointments" class="contacto-btn">Book an appointment</a>
+                </div><div class="en" data-lang="en"><h2>About El Templo del Qi</h2><p>El Templo del Qi is a wellness space in Santanyí designed to offer a calm, welcoming and personal environment. We offer Chinese Medicine, acupuncture, Reiki, energy therapy, massage and Tarot, with sessions tailored to each person.</p><p>📍 Carrer de Felanitx, 32 · Santanyí, Mallorca<br>🌿 In-person and online sessions depending on the therapy.</p></div>
+                <a data-lang="es" href="#citas" class="contacto-btn">Reservar cita</a><a data-lang="en" href="#appointments" class="contacto-btn">Book an appointment</a>
             </div>
         </div>
     </section>
 
     <!-- TESTIMONIOS -->
     <div class="testimonios">
-        <h2>Lo que dicen mis clientes</h2>
+        <h2><span data-lang="es">Lo que dicen mis clientes</span><span data-lang="en">What my clients say</span></h2>
         <div class="testimonial">
             <p>"Gracias a las terapias, me siento más equilibrado y con energía renovada."</p>
             <span>- Laura M.</span>
@@ -376,14 +380,13 @@
     <section class="ebook">
         <div class="ebook-container">
             <div class="ebook-info">
-                <h2>Mi Ebook</h2>
-                <h3>Autosanación con Medicina Tradicional China</h3>
+                <h2><span data-lang="es">Mi Ebook</span><span data-lang="en">My Ebook</span></h2>
+                <h3><span data-lang="es">Autosanación con Medicina Tradicional China</span><span data-lang="en">Self-Healing with Traditional Chinese Medicine</span></h3>
                 <p>
-                    Descubre herramientas prácticas para equilibrar tu energía,
-                    mejorar tu bienestar y conectar con tu poder interior.
+                    <span data-lang="es">Descubre herramientas prácticas para equilibrar tu energía, mejorar tu bienestar y conectar con tu poder interior.</span><span data-lang="en">Discover practical tools to balance your energy, improve your wellbeing and connect with your inner strength.</span>
                 </p>
                 <a href="https://buy.stripe.com/aFa3cu9bSgJRe1Ya271oI01 " target="_blank" class="ebook-btn">
-                    Comprar ahora
+                    <span data-lang="es">Comprar ahora</span><span data-lang="en">Buy now</span>
                 </a>
             </div>
         </div>
@@ -392,7 +395,7 @@
 </main>
 
 <footer id="contacto">
-    <p>📧 Email: eltemplodelqi@gmail.com | 📞 Tel: +34 673 790 307</p>
+    <p>📍 Carrer de Felanitx, 32 · 07650 Santanyí · Mallorca<br>📧 eltemplodelqi@gmail.com | 📞 +34 673 790 307</p>
     <p>© 2026 El Templo del Qi</p>
 </footer>
 
@@ -401,6 +404,9 @@
 
 
 <script>
+function setLanguage(lang){document.body.classList.toggle("lang-en",lang==="en");document.documentElement.lang=lang;localStorage.setItem("qi-lang",lang);location.hash=lang==="en"?"appointments":"citas";}
+if(localStorage.getItem("qi-lang")==="en")document.body.classList.add("lang-en");
+
 (function () {
     const opciones = {
         "Medicina china": { duraciones:["60 min"], modalidades:["Presencial","Online"] },
