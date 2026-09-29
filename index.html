@@ -39,6 +39,15 @@
         .hero-btn.alt { background:#fff; color:#2e7d32; }
         .promo { max-width:900px; margin:-8px auto 32px; background:#fff8e1; border:2px solid #d4a72c; border-radius:16px; padding:18px 20px; text-align:center; box-shadow:0 5px 16px rgba(0,0,0,.1); }
         .promo strong { color:#2e7d32; font-size:1.25em; }
+        .online-box { max-width:1000px; margin:0 auto 38px; padding:30px; border-radius:20px; background:linear-gradient(135deg,#edf7ee,#fff); box-shadow:0 7px 20px rgba(0,0,0,.10); text-align:center; border:1px solid #d7e8d8; }
+        .online-box h2 { font-family:'Playfair Display',serif; color:#2e7d32; font-size:2.2em; margin:0 0 8px; }
+        .online-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:22px 0; }
+        .online-card { background:#fff; border-radius:14px; padding:18px 12px; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+        .online-card h3 { color:#2e7d32; margin:4px 0 8px; }
+        .online-card p { margin:5px 0; }
+        .online-cta { display:inline-block; margin-top:10px; padding:13px 24px; border-radius:999px; background:#2e7d32; color:white; font-weight:bold; }
+        @media(max-width:800px){.online-grid{grid-template-columns:1fr 1fr;}}
+        @media(max-width:480px){.online-grid{grid-template-columns:1fr;}.online-box{padding:22px 15px;}}
         .section-title { text-align:center; font-family:'Playfair Display',serif; color:#2e7d32; font-size:2.1em; margin:12px 0 25px; }
         .langbar { text-align:center; padding:10px; background:#f1f8e9; font-weight:bold; position:sticky; top:0; z-index:50; box-shadow:0 2px 8px rgba(0,0,0,.08); }
         .langbar a { margin:0 8px; color:#2e7d32; cursor:pointer; }
@@ -259,6 +268,35 @@
 
 <main>
     <section class="promo"><div data-lang="es"><strong>✨ 20% DE DESCUENTO EN TU PRIMERA SESIÓN ✨</strong><br>Oferta de regreso válida hasta el 31/10/2026<br><a class="contacto-btn" href="#citas">Quiero mi cita</a></div><div data-lang="en"><strong>✨ 20% OFF YOUR FIRST SESSION ✨</strong><br>Welcome back offer valid until 31/10/2026<br><a class="contacto-btn" href="#appointments">Book now</a></div></section>
+    <section class="online-box" id="online">
+        <div data-lang="es">
+            <h2>🌍 Consultas Online</h2>
+            <p><strong>Tu sesión estés donde estés.</strong></p>
+            <p>Conecta con El Templo del Qi desde casa mediante una sesión privada online.</p>
+            <div class="online-grid">
+                <div class="online-card"><h3>☯️ Medicina China</h3><p>60 min</p><p><strong>50 €</strong></p></div>
+                <div class="online-card"><h3>🪷 Reiki</h3><p>60 min</p><p><strong>40 €</strong></p></div>
+                <div class="online-card"><h3>✨ Terapia energética</h3><p>60 min</p><p><strong>60 €</strong></p></div>
+                <div class="online-card"><h3>🔮 Tarot</h3><p>30 min · 25 €</p><p>60 min · 50 €</p><p>90 min · 80 €</p></div>
+            </div>
+            <p>🎁 <strong>20% de descuento en tu primera sesión · hasta 31/10/2026</strong></p>
+            <a class="online-cta" href="#citas">📲 Reservar consulta online</a>
+        </div>
+        <div data-lang="en">
+            <h2>🌍 Online Sessions</h2>
+            <p><strong>Your session, wherever you are.</strong></p>
+            <p>Connect with El Templo del Qi from home through a private online session.</p>
+            <div class="online-grid">
+                <div class="online-card"><h3>☯️ Chinese Medicine</h3><p>60 min</p><p><strong>€50</strong></p></div>
+                <div class="online-card"><h3>🪷 Reiki</h3><p>60 min</p><p><strong>€40</strong></p></div>
+                <div class="online-card"><h3>✨ Energy Therapy</h3><p>60 min</p><p><strong>€60</strong></p></div>
+                <div class="online-card"><h3>🔮 Tarot</h3><p>30 min · €25</p><p>60 min · €50</p><p>90 min · €80</p></div>
+            </div>
+            <p>🎁 <strong>20% off your first session · valid until 31/10/2026</strong></p>
+            <a class="online-cta" href="#appointments">📲 Book an online session</a>
+        </div>
+    </section>
+
     <h2 class="section-title"><span data-lang="es">Terapias</span><span data-lang="en">Therapies</span></h2>
 
     <!-- SERVICIOS -->
