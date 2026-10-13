@@ -1,0 +1,8 @@
+EL TEMPLO DEL QI — ARCHIVOS DE LA WEB RENOVADA
+
+1. Abre esta carpeta y utiliza index_templo_del_qi_con_imagenes_nuevas.html como index.html cuando vayas a subirlo a GitHub.
+2. Mantén las seis imágenes de terapia en la misma carpeta que index.html.
+3. Para que la portada y la sección “Sobre mí” muestren tu consulta real en la vista previa local, copia también a esta carpeta la fotografía original descargada de GitHub: consulta-el-templo-alta-calidad.jpg nitida.jpg. No cambies su nombre.
+4. No borres los archivos originales del repositorio. Primero prueba esta versión en local; después sustituiremos el index.html en GitHub y subiremos las seis imágenes nuevas.
+
+Nota: las fotografías de las tarjetas se han recortado de la propuesta visual aprobada para preparar una primera versión coherente. Antes de publicar, conviene revisar su calidad en el navegador.

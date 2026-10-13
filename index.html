@@ -254,13 +254,192 @@
             .cita-grid { grid-template-columns:1fr; }
             .cita-campo.full { grid-column:auto; }
         }
-    </style>
+
+/* Renovación visual 2026 — El Templo del Qi */
+:root{--qi-cream:#f8f2e6;--qi-paper:#fffaf1;--qi-sage:#76856c;--qi-forest:#304b3b;--qi-gold:#ad8a52;--qi-ink:#29372c}
+body{background:linear-gradient(180deg,#f9f3e9 0%,#f2eee4 55%,#faf6ee 100%);color:var(--qi-ink);font-family:'Roboto',sans-serif;line-height:1.6}
+.langbar{background:rgba(250,246,237,.97);color:var(--qi-forest);border-bottom:1px solid #dfd4bd;backdrop-filter:blur(10px);letter-spacing:.025em}
+.langbar a{color:var(--qi-forest)}
+header{position:relative;isolation:isolate;min-height:530px!important;padding:80px 24px!important;text-shadow:0 2px 12px rgba(0,0,0,.45)!important}
+header:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(26,45,31,.55),rgba(26,45,31,.15) 75%)}
+header h1{font-size:clamp(2.7rem,6vw,5rem);font-weight:400;letter-spacing:.035em;line-height:1.12;max-width:900px;margin:auto auto 8px}
+header p{font-size:clamp(1rem,2vw,1.3rem);letter-spacing:.045em;max-width:800px;margin:8px auto}
+.hero-actions{margin-top:28px}.hero-btn,.contacto-btn,.online-cta,.ebook-btn{background:var(--qi-forest);color:#fff;border-radius:999px;padding:13px 25px;box-shadow:0 4px 12px rgba(35,55,38,.12);transition:transform .2s,background .2s}
+.hero-btn:hover,.contacto-btn:hover,.online-cta:hover,.ebook-btn:hover{background:#496b53;transform:translateY(-2px)}.hero-btn.alt{background:var(--qi-paper);color:var(--qi-forest)}
+main{max-width:1240px;padding:38px 20px}.section-title,.online-box h2,.sobre h2,.testimonios h2,.ebook-info h2,.citas h2{color:var(--qi-forest);font-weight:400;letter-spacing:.02em}
+.promo{background:#fff9ed;border:1px solid #d9c59e;box-shadow:0 8px 25px rgba(65,58,42,.06);border-radius:12px}.promo strong{color:var(--qi-forest)}
+.online-box,.sobre,.citas,.ebook{background:rgba(255,252,246,.95);border:1px solid #e6dcc8;border-radius:14px;box-shadow:0 12px 35px rgba(61,56,40,.07)}
+.online-card,.servicio,.testimonial{background:#fffaf2;border:1px solid #e8ddc9;box-shadow:0 8px 22px rgba(51,58,41,.06);border-radius:10px}
+.online-card h3,.servicio h2,.testimonial span,.cita-campo label{color:var(--qi-forest)}
+.servicios{gap:20px}.servicio{width:300px;padding:17px 17px 26px}.servicio img{height:210px;border-radius:7px;filter:saturate(.87) contrast(.97)}
+.sobre img{border-radius:8px}.cita-nota{background:#f3f0e5;border-color:var(--qi-gold)}.cita-campo input,.cita-campo select,.cita-campo textarea{border-color:#d4cbb8;background:#fffdf9}
+.cita-submit{background:var(--qi-forest);border-radius:999px}.cita-submit:hover{background:#496b53}
+.ebook{background:linear-gradient(125deg,#fffaf0,#e9eddf)}footer{background:var(--qi-forest)}
+@media(max-width:650px){header{min-height:410px!important;padding:64px 20px!important}header h1{font-size:2.8rem}.servicio{box-sizing:border-box;width:min(100%,410px)}.online-box{padding:24px 15px}.langbar{font-size:.88rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+    
+/* Diseño elegido: vintage natural, luminoso y místico */
+:root {
+  --qi-cream: #fbf5e9;
+  --qi-paper: #fffaf1;
+  --qi-sage: #7d8b72;
+  --qi-forest: #294a38;
+  --qi-gold: #b58b45;
+  --qi-ink: #2d392f;
+}
+body {
+  background: #f8f2e7;
+  color: var(--qi-ink);
+  font-family: 'Roboto', sans-serif;
+}
+.langbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 12px clamp(16px, 4vw, 54px);
+  background: rgba(255,250,241,.97);
+  color: var(--qi-forest);
+  border-bottom: 1px solid #e3d4b5;
+  box-shadow: 0 3px 16px rgba(60,50,30,.06);
+  backdrop-filter: blur(12px);
+}
+.langbar a { color: var(--qi-forest); cursor: pointer; }
+.langbar .brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+.main-nav { display:flex; align-items:center; justify-content:center; gap:clamp(10px,1.5vw,24px); flex-wrap:wrap; }
+.main-nav a { font-size:.92rem; white-space:nowrap; }
+.main-nav a:hover { color:var(--qi-gold); }
+.language-switch { white-space:nowrap; }
+.nav-book {
+  display:inline-block;
+  padding:9px 17px;
+  border-radius:999px;
+  background:var(--qi-forest);
+  color:white!important;
+  font-weight:700;
+  white-space:nowrap;
+}
+header {
+  min-height: 430px !important;
+  padding: 80px 24px !important;
+  background-position: center 48% !important;
+  text-shadow: 0 2px 12px rgba(22,35,24,.45) !important;
+}
+header:before {
+  background: linear-gradient(90deg,rgba(30,48,34,.27),rgba(30,48,34,.08) 70%,rgba(30,48,34,.16)) !important;
+}
+header h1 {
+  font-family:'Playfair Display',serif;
+  color:#fffaf0;
+  letter-spacing:.015em;
+}
+header p { color:#fffaf0; }
+.section-title {
+  font-family:'Playfair Display',serif;
+  position:relative;
+  margin:22px 0 28px;
+}
+.section-title:after {
+  content:'✦';
+  display:block;
+  color:var(--qi-gold);
+  font-size:.75rem;
+  margin-top:4px;
+}
+.servicios { gap:22px; align-items:stretch; }
+.servicio {
+  overflow:hidden;
+  width:300px;
+  padding:14px 14px 24px;
+  background:rgba(255,250,241,.96);
+  border:1px solid #e8dcc5;
+  border-radius:15px;
+  box-shadow:0 10px 28px rgba(69,58,38,.07);
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.servicio:hover { transform:translateY(-4px); box-shadow:0 16px 34px rgba(69,58,38,.12); }
+.servicio img {
+  display:block;
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:10px;
+  filter:saturate(.91) contrast(.98);
+}
+.servicio h2 {
+  color:var(--qi-forest);
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;
+  margin:14px 0 8px;
+}
+.servicio p { line-height:1.55; }
+.contacto-btn,.hero-btn,.online-cta,.ebook-btn,.cita-submit {
+  background:var(--qi-forest);
+  border-radius:999px;
+}
+.promo {
+  background:linear-gradient(110deg,#fffaf0,#f4ead4,#fffaf0);
+  border:1px solid #dfc48b;
+  border-radius:15px;
+}
+.online-box,.sobre,.citas,.ebook {
+  border-radius:18px;
+  border:1px solid #e7dac3;
+  box-shadow:0 12px 32px rgba(65,55,37,.06);
+}
+footer { background:var(--qi-forest); }
+@media(max-width:900px) {
+  .langbar { justify-content:center; }
+  .main-nav { order:3; width:100%; }
+}
+@media(max-width:650px) {
+  .langbar { gap:10px; padding:10px 12px; }
+  .langbar .brand { width:100%; text-align:center; }
+  .main-nav { gap:8px 14px; }
+  .main-nav a { font-size:.82rem; }
+  .nav-book { padding:8px 12px; }
+  header { min-height:370px!important; padding:58px 18px!important; }
+  header h1 { font-size:2.65rem!important; }
+  .servicio { width:min(100%,410px); }
+  .servicio img { height:205px; }
+}
+
+    
+.ebook-con-portada{display:grid;grid-template-columns:minmax(180px,290px) minmax(0,1fr);align-items:center;gap:clamp(22px,5vw,60px);max-width:920px;margin:auto}
+.ebook-cover{padding:10px;background:#fffdf7;border:1px solid #dfd0af;border-radius:12px;box-shadow:0 15px 35px rgba(51,66,49,.13);transform:rotate(-2deg)}
+.ebook-cover img{display:block;width:100%;height:auto;border-radius:5px}
+.ebook-info{text-align:left}
+@media(max-width:650px){.ebook-con-portada{grid-template-columns:1fr;justify-items:center}.ebook-cover{width:min(65vw,270px)}.ebook-info{text-align:center}}
+</style>
 </head>
 
 <body>
 
-<div class="langbar">🌿 El Templo del Qi &nbsp; <a onclick="setLanguage('es')">🇪🇸 ES</a> | <a onclick="setLanguage('en')">🇬🇧 EN</a></div>
-<header>
+<div class="langbar">
+  <a class="brand" href="#inicio">❀ El Templo del Qi</a>
+  <nav class="main-nav" aria-label="Navegación principal">
+    <a href="#inicio"><span data-lang="es">Inicio</span><span data-lang="en">Home</span></a>
+    <a href="#terapias"><span data-lang="es">Terapias</span><span data-lang="en">Therapies</span></a>
+    <a href="#sobre"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span></a>
+    <a href="#online"><span data-lang="es">Consultas online</span><span data-lang="en">Online sessions</span></a>
+    <a href="#ebook"><span data-lang="es">Ebook</span><span data-lang="en">Ebook</span></a>
+    <a href="#contacto"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+  </nav>
+  <span class="language-switch"><a onclick="setLanguage('es')">🇪🇸 ES</a> | <a onclick="setLanguage('en')">🇬🇧 EN</a></span>
+  <a class="nav-book" data-lang="es" href="#citas">Reservar cita</a>
+  <a class="nav-book" data-lang="en" href="#appointments">Book now</a>
+</div>
+<header id="inicio">
     <h1>El Templo del Qi</h1>
     <p data-lang="es">Medicina China y terapias para cuerpo, mente y espíritu · Santanyí, Mallorca</p><p data-lang="en">Chinese Medicine and therapies for body, mind and spirit · Santanyí, Mallorca</p>
     <div class="hero-actions"><a data-lang="es" class="hero-btn" href="#citas">Reservar cita</a><a data-lang="en" class="hero-btn" href="#appointments">Book an appointment</a></div>
@@ -297,41 +476,41 @@
         </div>
     </section>
 
-    <h2 class="section-title"><span data-lang="es">Terapias</span><span data-lang="en">Therapies</span></h2>
+    <h2 id="terapias" class="section-title"><span data-lang="es">Terapias</span><span data-lang="en">Therapies</span></h2>
 
     <!-- SERVICIOS -->
     <div class="servicios">
         <div class="servicio">
-            <img src="medicina-china.jpg" alt="Medicina China">
+            <img src="medicina-china-nueva.jpg" alt="Medicina China">
             <h2>Medicina China</h2>
             <p>Equilibra tu energía y mejora tu salud con tratamientos tradicionales y personalizados.</p>
             <a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
 
         <div class="servicio">
-            <img src="tarot.jpg" alt="Tarot">
+            <img src="tarot-nuevo.jpg" alt="Tarot">
             <h2>Tarot</h2>
             <p>Lecturas precisas y orientativas para guiar tu camino personal y espiritual.</p>
             <a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
 
         <div class="servicio">
-            <img src="reiki.jpg" alt="Reiki">
+            <img src="reiki-nuevo.jpg" alt="Reiki">
             <h2>Reiki</h2>
             <p>Sanación energética para reducir estrés, equilibrar emociones y mejorar tu bienestar.</p>
             <a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
 
         <div class="servicio">
-            <img src="terapias-holisticas.jpg" alt="Acupuntura">
+            <img src="acupuntura-nueva.jpg" alt="Sesión de acupuntura en un espacio cálido y natural">
             <h2><span data-lang="es">Acupuntura</span><span data-lang="en">Acupuncture</span></h2><p data-lang="es">Sesiones presenciales orientadas al equilibrio y bienestar dentro de la Medicina Tradicional China.</p><p data-lang="en">In-person acupuncture sessions focused on balance and wellbeing within Traditional Chinese Medicine.</p><p><strong>40 min · 30 €</strong> · <span data-lang="es">Presencial</span><span data-lang="en">In person</span></p><a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
         <div class="servicio">
-            <img src="terapias-holisticas.jpg" alt="Terapia energética">
+            <img src="terapia-energetica-nueva.jpg" alt="Meditación y equilibrio energético">
             <h2><span data-lang="es">Terapia energética</span><span data-lang="en">Energy Therapy</span></h2><p data-lang="es">Sesiones presenciales u online para favorecer relajación, equilibrio y bienestar personal.</p><p data-lang="en">In-person or online sessions designed to support relaxation, balance and personal wellbeing.</p><p><strong>60 min · 60 €</strong> · <span data-lang="es">Presencial / Online</span><span data-lang="en">In person / Online</span></p><a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
         <div class="servicio">
-            <img src="terapias-holisticas.jpg" alt="Masajes">
+            <img src="masajes-nuevo.jpg" alt="Masaje relajante en un spa">
             <h2><span data-lang="es">Masajes</span><span data-lang="en">Massage</span></h2><p data-lang="es">Sesiones presenciales de 30 o 60 minutos para relajarte y dedicarte un momento de bienestar.</p><p data-lang="en">30 or 60-minute in-person massage sessions for relaxation and wellbeing.</p><p><strong>30 min · 40 € | 60 min · 70 €</strong> · <span data-lang="es">Presencial</span><span data-lang="en">In person</span></p><a href="#citas" class="contacto-btn"><span data-lang="es">Solicitar cita</span><span data-lang="en">Book appointment</span></a>
         </div>
     </div>
@@ -415,8 +594,9 @@
     </div>
 
     <!-- SECCIÓN EBOOK -->
-    <section class="ebook">
-        <div class="ebook-container">
+    <section class="ebook" id="ebook">
+        <div class="ebook-container ebook-con-portada">
+            <div class="ebook-cover"><img src="portada-ebook.jpg" alt="Portada del libro Autosanación con Medicina Tradicional China" loading="lazy"></div>
             <div class="ebook-info">
                 <h2><span data-lang="es">Mi Ebook</span><span data-lang="en">My Ebook</span></h2>
                 <h3><span data-lang="es">Autosanación con Medicina Tradicional China</span><span data-lang="en">Self-Healing with Traditional Chinese Medicine</span></h3>
@@ -506,7 +686,7 @@ if(localStorage.getItem("qi-lang")==="en")document.body.classList.add("lang-en")
     });
 })();
 
-const fotoConsulta="consulta-el-templo-alta-calidad.jpg%20nitida.jpg?v=2";const i=document.getElementById("fotoConsulta");if(i)i.src=fotoConsulta;const h=document.querySelector("header");if(h){h.style.backgroundImage='linear-gradient(rgba(20,45,25,.38),rgba(20,45,25,.38)), url("'+fotoConsulta+'")';h.style.backgroundSize="cover";h.style.backgroundPosition="center";h.style.minHeight="520px";h.style.display="flex";h.style.flexDirection="column";h.style.justifyContent="center";}
+const fotoConsulta="consulta-el-templo-alta-calidad.jpg%20nitida.jpg?v=2";const i=document.getElementById("fotoConsulta");if(i)i.src=fotoConsulta;const h=document.querySelector("header");if(h){h.style.backgroundImage='linear-gradient(rgba(30,48,34,.20),rgba(30,48,34,.20)), url("'+fotoConsulta+'")';h.style.backgroundSize="cover";h.style.backgroundPosition="center";h.style.minHeight="520px";h.style.display="flex";h.style.flexDirection="column";h.style.justifyContent="center";}
 </script>
 
 </body>
